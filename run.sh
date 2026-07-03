@@ -8,4 +8,4 @@ if [[ ! -d .venv ]]; then
   .venv/bin/pip install -U pip
   .venv/bin/pip install -r requirements.txt
 fi
-exec .venv/bin/python -m linux_share_wifi "$@"
+exec .venv/bin/python -m Linux_ShareWiFi "$@"

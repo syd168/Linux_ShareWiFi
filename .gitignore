@@ -6,4 +6,4 @@ dist/
 build/
 .Python
 *.png
-!linux_share_wifi/**/*.png
+!Linux_ShareWiFi/**/*.png

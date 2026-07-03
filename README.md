@@ -2,7 +2,7 @@
 
 独立的 **PySide6** Linux WiFi 热点图形界面。使用系统 [`create_ap`](https://github.com/lakinduakash/linux-wifi-hotspot) 脚本作为后端（与 GTK 版 `wihotspot` 相同）。
 
-可将整个 `linux-share-wifi` 文件夹复制到任意位置单独使用。
+可将整个 `Linux_ShareWiFi` 文件夹复制到任意位置单独使用。
 
 ## 功能
 
@@ -18,7 +18,7 @@
 ## 快速开始
 
 ```bash
-cd linux-share-wifi
+cd Linux_ShareWiFi
 chmod +x run.sh
 ./run.sh
 ```
@@ -29,7 +29,7 @@ chmod +x run.sh
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-python -m linux_share_wifi
+python -m Linux_ShareWiFi
 ```
 
 **建议用普通用户运行**（不要用 `sudo ./run.sh`）。创建或停止热点时 Polkit 会弹出授权对话框。
@@ -38,7 +38,7 @@ python -m linux_share_wifi
 
 ## 全新 Ubuntu 上能否运行？
 
-**可以运行**，但不能只复制 `linux-share-wifi` 文件夹就完事——还需要安装系统依赖和 `create_ap` 后端。
+**可以运行**，但不能只复制 `Linux_ShareWiFi` 文件夹就完事——还需要安装系统依赖和 `create_ap` 后端。
 
 ### 本项目自带、可独立运行的部分
 
@@ -80,7 +80,7 @@ cd linux-wifi-hotspot
 sudo make install-cli-only
 
 # 3. 运行 Linux Share WiFi
-cd /path/to/linux-share-wifi
+cd /path/to/Linux_ShareWiFi
 chmod +x run.sh
 ./run.sh
 ```
@@ -142,13 +142,13 @@ export CREATE_AP_CONFIG=/etc/create_ap.conf
 ## 项目结构
 
 ```
-linux-share-wifi/
+Linux_ShareWiFi/
   README.md
   requirements.txt
   pyproject.toml
   run.sh
-  linux_share_wifi/
-    __main__.py          # python -m linux_share_wifi
+  Linux_ShareWiFi/
+    __main__.py          # python -m Linux_ShareWiFi
     main_window.py       # Qt 主界面
     create_ap_cli.py     # create_ap 封装
     workers.py           # 后台线程

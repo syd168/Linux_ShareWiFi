@@ -1,5 +1,5 @@
 [project]
-name = "linux-share-wifi"
+name = "Linux-ShareWiFi"
 version = "0.1.0"
 description = "Linux Share WiFi — PySide6 GUI for WiFi hotspot sharing via create_ap"
 readme = "README.md"
@@ -10,7 +10,7 @@ dependencies = [
 ]
 
 [project.scripts]
-linux-share-wifi = "linux_share_wifi.__main__:main"
+Linux-ShareWiFi = "Linux_ShareWiFi.__main__:main"
 
 [build-system]
 requires = ["setuptools>=61"]
@@ -18,4 +18,4 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["linux_share_wifi*"]
+include = ["Linux_ShareWiFi*"]

@@ -393,7 +393,7 @@ class MainWindow(QMainWindow):
 
 def run_app() -> int:
     app = QApplication([])
-    app.setApplicationName("linux-share-wifi")
+    app.setApplicationName("Linux_ShareWiFi")
     win = MainWindow()
     win.show()
     return app.exec()

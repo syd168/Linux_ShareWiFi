@@ -1,4 +1,4 @@
-"""Entry point for linux-share-wifi."""
+"""Entry point for Linux_ShareWiFi."""
 
 from .main_window import run_app
 
