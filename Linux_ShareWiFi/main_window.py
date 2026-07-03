@@ -102,7 +102,7 @@ class MainWindow(QMainWindow):
         layout = QVBoxLayout(box)
 
         form = QFormLayout()
-        self.entry_ssid = QLineEdit("LinuxShareWifi")
+        self.entry_ssid = QLineEdit("MyAccessPoint")
         form.addRow("SSID", self.entry_ssid)
 
         pass_row = QHBoxLayout()
@@ -202,7 +202,7 @@ class MainWindow(QMainWindow):
                 break
 
     def _load_defaults(self):
-        self.entry_ssid.setText("LinuxShareWifi")
+        self.entry_ssid.setText("MyAccessPoint")
         self.entry_pass.setText("12345678")
 
     def _freq_band(self) -> str | None:

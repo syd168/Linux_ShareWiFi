@@ -34,7 +34,7 @@ python -m Linux_ShareWiFi
 
 **建议用普通用户运行**（不要用 `sudo ./run.sh`）。创建或停止热点时 Polkit 会弹出授权对话框。
 
-默认热点 SSID 为 **LinuxShareWifi**，可在界面中修改。
+默认热点 SSID 为 **MyAccessPoint**，可在界面中修改。
 
 ## 全新 Ubuntu 上能否运行？
 
