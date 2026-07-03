@@ -1,5 +1,7 @@
 # Linux Share WiFi
 
+**中文** | [English](README.en.md)
+
 独立的 **PySide6** Linux WiFi 热点图形界面。使用系统 [`create_ap`](https://github.com/lakinduakash/linux-wifi-hotspot) 脚本作为后端（与 GTK 版 `wihotspot` 相同）。
 
 可将整个 `Linux_ShareWiFi` 文件夹复制到任意位置单独使用。
@@ -144,6 +146,7 @@ export CREATE_AP_CONFIG=/etc/create_ap.conf
 ```
 Linux_ShareWiFi/
   README.md
+  README.en.md
   requirements.txt
   pyproject.toml
   run.sh
