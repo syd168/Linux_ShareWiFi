@@ -1,0 +1,21 @@
+[project]
+name = "wifi-host-qt"
+version = "0.1.0"
+description = "WiFi hotspot manager GUI (PySide6) using create_ap"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "PySide6>=6.5.0",
+    "qrcode[pil]>=7.4.2",
+]
+
+[project.scripts]
+wifi-host-qt = "wifi_host_qt.__main__:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["wifi_host_qt*"]
