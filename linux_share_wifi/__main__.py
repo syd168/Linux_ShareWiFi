@@ -1,4 +1,4 @@
-"""Entry point for wifi-host-qt."""
+"""Entry point for linux-share-wifi."""
 
 from .main_window import run_app
 

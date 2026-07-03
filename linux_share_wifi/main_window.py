@@ -70,7 +70,7 @@ class HotspotRowWidget(QWidget):
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("WiFi Hotspot (Qt)")
+        self.setWindowTitle("Linux Share WiFi")
         self.resize(720, 680)
         self._running: list[cap.RunningHotspot] = []
         self._workers: list = []
@@ -102,7 +102,7 @@ class MainWindow(QMainWindow):
         layout = QVBoxLayout(box)
 
         form = QFormLayout()
-        self.entry_ssid = QLineEdit("MyAccessPoint")
+        self.entry_ssid = QLineEdit("LinuxShareWifi")
         form.addRow("SSID", self.entry_ssid)
 
         pass_row = QHBoxLayout()
@@ -202,7 +202,7 @@ class MainWindow(QMainWindow):
                 break
 
     def _load_defaults(self):
-        self.entry_ssid.setText("MyAccessPoint")
+        self.entry_ssid.setText("LinuxShareWifi")
         self.entry_pass.setText("12345678")
 
     def _freq_band(self) -> str | None:
@@ -393,7 +393,7 @@ class MainWindow(QMainWindow):
 
 def run_app() -> int:
     app = QApplication([])
-    app.setApplicationName("wifi-host-qt")
+    app.setApplicationName("linux-share-wifi")
     win = MainWindow()
     win.show()
     return app.exec()

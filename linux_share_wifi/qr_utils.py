@@ -17,7 +17,7 @@ def build_wifi_qr_string(ssid: str, password: str, *, open_network: bool) -> str
 
 def generate_qr_png(ssid: str, password: str, *, open_network: bool) -> str:
     payload = build_wifi_qr_string(ssid, password, open_network=open_network)
-    path = os.path.join(tempfile.gettempdir(), f"wihotspot_qr_{os.getuid()}.png")
+    path = os.path.join(tempfile.gettempdir(), f"linux_share_wifi_qr_{os.getuid()}.png")
     img = qrcode.make(payload, error_correction=ERROR_CORRECT_H)
     img.save(path)
     return path

@@ -1,7 +1,7 @@
 [project]
-name = "wifi-host-qt"
+name = "linux-share-wifi"
 version = "0.1.0"
-description = "WiFi hotspot manager GUI (PySide6) using create_ap"
+description = "Linux Share WiFi — PySide6 GUI for WiFi hotspot sharing via create_ap"
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
@@ -10,7 +10,7 @@ dependencies = [
 ]
 
 [project.scripts]
-wifi-host-qt = "wifi_host_qt.__main__:main"
+linux-share-wifi = "linux_share_wifi.__main__:main"
 
 [build-system]
 requires = ["setuptools>=61"]
@@ -18,4 +18,4 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["wifi_host_qt*"]
+include = ["linux_share_wifi*"]

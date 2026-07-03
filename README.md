@@ -1,8 +1,8 @@
-# WiFi Host Qt
+# Linux Share WiFi
 
 独立的 **PySide6** Linux WiFi 热点图形界面。使用系统 [`create_ap`](https://github.com/lakinduakash/linux-wifi-hotspot) 脚本作为后端（与 GTK 版 `wihotspot` 相同）。
 
-可将整个 `wifi_host_qt` 文件夹复制到任意位置单独使用。
+可将整个 `linux-share-wifi` 文件夹复制到任意位置单独使用。
 
 ## 功能
 
@@ -18,7 +18,7 @@
 ## 快速开始
 
 ```bash
-cd wifi_host_qt
+cd linux-share-wifi
 chmod +x run.sh
 ./run.sh
 ```
@@ -29,14 +29,16 @@ chmod +x run.sh
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-python -m wifi_host_qt
+python -m linux_share_wifi
 ```
 
 **建议用普通用户运行**（不要用 `sudo ./run.sh`）。创建或停止热点时 Polkit 会弹出授权对话框。
 
+默认热点 SSID 为 **LinuxShareWifi**，可在界面中修改。
+
 ## 全新 Ubuntu 上能否运行？
 
-**可以运行**，但不能只复制 `wifi_host_qt` 文件夹就完事——还需要安装系统依赖和 `create_ap` 后端。
+**可以运行**，但不能只复制 `linux-share-wifi` 文件夹就完事——还需要安装系统依赖和 `create_ap` 后端。
 
 ### 本项目自带、可独立运行的部分
 
@@ -50,7 +52,7 @@ python -m wifi_host_qt
 |------|----------|------|
 | Python | `python3`、`python3-venv` | 最小化安装有时默认没有 venv |
 | Qt 界面 | 桌面环境（GNOME 等） | 无图形界面无法显示窗口 |
-| 热点后端 | **`create_ap`** | Qt 版只是 GUI，真正建热点靠它 |
+| 热点后端 | **`create_ap`** | GUI 只是前端，真正建热点靠它 |
 | 系统工具 | hostapd、dnsmasq、iptables、iw、iproute2 | `create_ap` 运行时需要 |
 | 权限 | `pkexec`（policykit-1） | 创建/停止热点时会弹授权框 |
 | 可选 | haveged | 随机数不足时有用 |
@@ -77,8 +79,8 @@ git clone https://github.com/lakinduakash/linux-wifi-hotspot.git
 cd linux-wifi-hotspot
 sudo make install-cli-only
 
-# 3. 运行 Qt 版
-cd /path/to/wifi_host_qt
+# 3. 运行 Linux Share WiFi
+cd /path/to/linux-share-wifi
 chmod +x run.sh
 ./run.sh
 ```
@@ -103,14 +105,14 @@ chmod +x run.sh
 
 ### 与 GTK 版对比
 
-| | GTK 原版 | wifi_host_qt |
-|---|---------|--------------|
+| | GTK 原版 | Linux Share WiFi |
+|---|---------|------------------|
 | 编译 | 需要 gcc、gtk 开发包 | **不需要** |
 | Python | 不需要 | 需要 3.9+ |
 | create_ap | 需要 | **同样需要** |
 | 系统热点工具 | 需要 | **同样需要** |
 
-在**带桌面的全新 Ubuntu** 上，装好依赖和 `create_ap` 后，Qt 版**可以正常运行**，且比 C/GTK 版更容易部署（不用编译）。
+在**带桌面的全新 Ubuntu** 上，装好依赖和 `create_ap` 后，**可以正常运行**，且比 C/GTK 版更容易部署（不用编译）。
 
 ## 依赖说明
 
@@ -140,13 +142,13 @@ export CREATE_AP_CONFIG=/etc/create_ap.conf
 ## 项目结构
 
 ```
-wifi_host_qt/
+linux-share-wifi/
   README.md
   requirements.txt
   pyproject.toml
   run.sh
-  wifi_host_qt/
-    __main__.py          # python -m wifi_host_qt
+  linux_share_wifi/
+    __main__.py          # python -m linux_share_wifi
     main_window.py       # Qt 主界面
     create_ap_cli.py     # create_ap 封装
     workers.py           # 后台线程
@@ -156,12 +158,12 @@ wifi_host_qt/
 
 ## 与 linux-wifi-hotspot 的关系
 
-| | GTK 原版 | wifi_host_qt |
-|---|-------------|--------------|
+| | GTK 原版 | Linux Share WiFi |
+|---|-------------|------------------|
 | UI | GTK 3 + Glade | PySide6 |
 | 后端 | create_ap | create_ap |
 | 语言 | C | Python |
-| 仓库 | 可同 monorepo | **独立文件夹** |
+| 仓库 | 可同 monorepo | **独立仓库** |
 
 ## License
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Run WiFi Hotspot Qt GUI from source tree
+# Run Linux Share WiFi GUI from source tree
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 cd "$ROOT"
@@ -8,4 +8,4 @@ if [[ ! -d .venv ]]; then
   .venv/bin/pip install -U pip
   .venv/bin/pip install -r requirements.txt
 fi
-exec .venv/bin/python -m wifi_host_qt "$@"
+exec .venv/bin/python -m linux_share_wifi "$@"
